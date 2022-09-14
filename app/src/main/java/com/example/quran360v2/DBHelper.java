@@ -203,6 +203,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         String query="SELECT * FROM "+params.AYAH_TABLE+" where SuraID="+surahNumber;
         Cursor cursor=db.rawQuery(query,null);
+        int count=1;
         String BismillahA="بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
         String BismillahT="شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
         //ArrayList<String> ayahList=new ArrayList<>();
@@ -210,12 +211,19 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<GenericListItem> genericListItems=new ArrayList<>();
         if(cursor.moveToFirst())
         {
+
             do {
                 String ayah="";
                 GenericListItem item=new GenericListItem();
 
-                if(surahNumber==1 || surahNumber==9)
-                {
+
+                if((surahNumber!=1 && surahNumber!=9)&& (count==1)) {
+                    GenericListItem item2=new GenericListItem();
+                    item2.setFirstEntity(BismillahA);
+                    item2.setSecendEntity(BismillahT);
+                    genericListItems.add(item2);
+                    count++;
+                }
                     if(cursor.getString(3) != null){
 
                         item.setFirstEntity(cursor.getString(3));
@@ -224,21 +232,8 @@ public class DBHelper extends SQLiteOpenHelper {
                         genericListItems.add(item);
                     }
 
-                }
-                else{
-                    if(cursor.getString(3) != null){
-                        GenericListItem item2=new GenericListItem();
-                        item2.setFirstEntity(BismillahA);
-                        item2.setSecendEntity(BismillahT);
-                        genericListItems.add(item2);
-                        item.setFirstEntity(cursor.getString(3));
-                        item.setSecendEntity(cursor.getString(4));
-                        Log.i("Ayah:",ayah);
-                        genericListItems.add(item);
-                    }
 
 
-                }
             } while (cursor.moveToNext());
         }
         return genericListItems;

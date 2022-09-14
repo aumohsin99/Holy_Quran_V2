@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,12 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.quran360v2.AyahList;
 import com.example.quran360v2.GenericListItem;
 import com.example.quran360v2.R;
-import com.example.quran360v2.SurahList;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapterAyah extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private Context context;
     private List<GenericListItem> genericListItems;
 
@@ -34,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_custom_surah_view,parent,false);
 
-        return new ViewHolder(view);
+        return new RecyclerViewAdapter.ViewHolder(view);
     }
 
     @Override
@@ -62,7 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View view) {
-           // Log.i("Clicked on list:",String.valueOf(position));
+            // Log.i("Clicked on list:",String.valueOf(position));
             Intent intent=new Intent(context, AyahList.class);
             TextView text=(TextView)view.findViewById(R.id.surahA);
 
@@ -76,3 +74,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 }
+

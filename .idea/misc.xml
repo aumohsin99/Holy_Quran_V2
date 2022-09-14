@@ -3,8 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Git Repos/Holy_Quran_V2/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Git Repos/Holy_Quran_V2/app/src/main/res/layout/header.xml" value="0.1" />
         <entry key="..\:/Quran360/app/src/main/res/layout/activity_ayah_list.xml" value="0.165625" />
         <entry key="..\:/Quran360/app/src/main/res/layout/activity_custom_ayah_view.xml" value="0.165625" />
         <entry key="..\:/Quran360/app/src/main/res/layout/activity_custom_surah_view.xml" value="0.15979381443298968" />
@@ -16,6 +14,7 @@
         <entry key="..\:/Recyclerview/Quran360/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Recyclerview/Quran360/app/src/main/res/layout/activity_main.xml" value="0.14749893116716545" />
         <entry key="..\:/Recyclerview/Quran360/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/Recyclerview/Quran360v2/app/src/main/res/layout/activity_custom_surah_view.xml" value="0.14749893116716545" />
         <entry key="..\:/Recyclerview/Quran360v2/app/src/main/res/layout/activity_surah_list.xml" value="0.14749893116716545" />
         <entry key="..\:/Recyclerview/Quran360v2/app/src/main/res/layout/header.xml" value="0.14749893116716545" />
       </map>

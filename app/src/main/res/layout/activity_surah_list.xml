@@ -6,33 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".SurahList">
 
+    <EditText
+        android:id="@+id/searchField"
+        android:layout_width="277dp"
+        android:layout_height="73dp"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:hint="Surah name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/surahList"
         android:layout_width="413dp"
-        android:layout_height="767dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/searchField">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="393dp"
-        android:layout_height="118dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/searchField"
-            android:layout_width="329dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:ems="10"
-            android:hint="Surah name"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
