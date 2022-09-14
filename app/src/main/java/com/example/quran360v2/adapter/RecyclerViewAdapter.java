@@ -1,4 +1,4 @@
-package com.example.quran360v2.adapter;
+package com.example.holyquranv2v2.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quran360v2.AyahList;
-import com.example.quran360v2.GenericListItem;
-import com.example.quran360v2.R;
-import com.example.quran360v2.SurahList;
+import com.example.holyquranv2v2.AyahList;
+import com.example.holyquranv2v2.GenericListItem;
+import com.example.holyquranv2v2.R;
+import com.example.holyquranv2v2.SurahList;
+import com.example.holyquranv2v2.TranslationDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,14 +64,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @Override
         public void onClick(View view) {
            // Log.i("Clicked on list:",String.valueOf(position));
-            Intent intent=new Intent(context, AyahList.class);
-            TextView text=(TextView)view.findViewById(R.id.surahA);
+            Intent intent=new Intent(context, TranslationDialog.class);
+            TextView textA=(TextView)view.findViewById(R.id.surahA);
+            TextView textE=(TextView)view.findViewById(R.id.surahE);
 
-            String surahName = text.getText().toString();
+            String surahNameA = textA.getText().toString();
+            String surahNameE = textE.getText().toString();
             //String selectedFromList = (String) (surahList.getItemAtPosition(i));
-            Log.i("Itemmm String::>:",surahName);
+            //Log.i("Itemmm String::>:",surahName);
 
-            intent.putExtra("SurahName", surahName);
+            intent.putExtra("SurahNameA", surahNameA);
+            intent.putExtra("SurahNameE", surahNameE);
             context.startActivity(intent);
 
         }

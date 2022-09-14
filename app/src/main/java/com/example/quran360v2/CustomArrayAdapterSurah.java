@@ -1,4 +1,4 @@
-package com.example.quran360v2;
+package com.example.holyquranv2v2;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

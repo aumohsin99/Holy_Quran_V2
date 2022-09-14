@@ -1,4 +1,4 @@
-package com.example.quran360v2;
+package com.example.holyquranv2v2;
 
 public class GenericListItem {
     private String firstEntity;

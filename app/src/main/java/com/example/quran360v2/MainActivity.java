@@ -1,4 +1,4 @@
-package com.example.quran360v2;
+package com.example.holyquranv2v2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;

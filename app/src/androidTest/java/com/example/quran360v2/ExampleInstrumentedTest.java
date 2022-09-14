@@ -1,4 +1,4 @@
-package com.example.quran360v2;
+package com.example.holyquranv2v2;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.quran360", appContext.getPackageName());
+        assertEquals("com.example.holyquranv2", appContext.getPackageName());
     }
 }
