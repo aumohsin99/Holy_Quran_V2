@@ -32,18 +32,19 @@ public class TranslationDialog extends AppCompatActivity {
         String surahNameA=intent.getStringExtra("SurahNameA");
         String surahNameE=intent.getStringExtra("SurahNameE");
 
+
         translation.setText(surahNameE);
         arabic.setText(surahNameA);
 
-
+        Intent intent2=new Intent(this, AyahList.class);
         engTrans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2=new Intent(TranslationDialog.this, AyahList.class);
+
 
                 intent2.putExtra("SurahName", surahNameA);
                 intent2.putExtra("Translation", "eng");
-                startActivity(intent);
+                startActivity(intent2);
 
             }
         });
@@ -51,11 +52,11 @@ public class TranslationDialog extends AppCompatActivity {
         urduTrans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2=new Intent(TranslationDialog.this, AyahList.class);
+
 
                 intent2.putExtra("SurahName", surahNameA);
                 intent2.putExtra("Translation", "urdu");
-                startActivity(intent);
+                startActivity(intent2);
 
             }
         });

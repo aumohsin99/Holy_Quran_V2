@@ -198,7 +198,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<GenericListItem> displayAyah(int surahNumber)
+    public ArrayList<GenericListItem> displayAyah(int surahNumber,String trans)
     {
         SQLiteDatabase db=this.getReadableDatabase();
         String query="SELECT * FROM "+params.AYAH_TABLE+" where SuraID="+surahNumber;
@@ -206,6 +206,7 @@ public class DBHelper extends SQLiteOpenHelper {
         int count=1;
         String BismillahA="بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
         String BismillahT="شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
+        String BismillahTE="In the Name of Allah, the Most Beneficent, the Most Merciful.";
         //ArrayList<String> ayahList=new ArrayList<>();
         //9
         ArrayList<GenericListItem> genericListItems=new ArrayList<>();
@@ -220,14 +221,25 @@ public class DBHelper extends SQLiteOpenHelper {
                 if((surahNumber!=1 && surahNumber!=9)&& (count==1)) {
                     GenericListItem item2=new GenericListItem();
                     item2.setFirstEntity(BismillahA);
-                    item2.setSecendEntity(BismillahT);
+                    if(trans.contains("eng"))
+                    {
+                        item2.setSecendEntity(BismillahTE);
+                    }
+                    else
+                        item2.setSecendEntity(BismillahT);
                     genericListItems.add(item2);
                     count++;
                 }
                     if(cursor.getString(3) != null){
 
                         item.setFirstEntity(cursor.getString(3));
-                        item.setSecendEntity(cursor.getString(4));
+                        if(trans.contains("urdu")) {
+                            item.setSecendEntity(cursor.getString(4));
+                        }
+                        else
+                            item.setSecendEntity(cursor.getString(6));
+
+
                         Log.i("Ayah:",ayah);
                         genericListItems.add(item);
                     }

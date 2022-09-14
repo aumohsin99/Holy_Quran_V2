@@ -29,10 +29,11 @@ public class AyahList extends AppCompatActivity {
 
         Intent intent=getIntent();
         String surahName=intent.getStringExtra("SurahName");
+        String trans=intent.getStringExtra("Translation");
 
         DBHelper dbhelper=new DBHelper(this);
 
-        ArrayList<GenericListItem> AyahList=dbhelper.displayAyah(dbhelper.getSurahNumber(surahName));
+        ArrayList<GenericListItem> AyahList=dbhelper.displayAyah(dbhelper.getSurahNumber(surahName),trans);
 //ee
 
 

@@ -7,68 +7,71 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="249dp"
+        android:layout_height="904dp"
         android:background="#232222">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="135dp"
-            android:layout_height="70dp"
+            android:layout_width="223dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="148dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/quran_icon2" />
 
         <TextView
-            android:id="@+id/translation"
-            android:layout_width="163dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="88dp"
-            android:fontFamily="@font/jameel_noori_nastaleeq"
-            android:text="Translation"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/arabic"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/arabic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="384dp"
             android:layout_marginEnd="80dp"
             android:fontFamily="@font/noorehuda"
             android:text="Arabic"
             android:textColor="#8BC34A"
-            android:textSize="20sp"
+            android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/translation"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/engTrans"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:text="Read Quran In English"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
             android:id="@+id/urduTrans"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="8dp"
             android:text="اردو میں قرآن پڑھیں"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/engTrans" />
+
+        <Button
+            android:id="@+id/engTrans"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="484dp"
+            android:text="Read Quran In English"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/translation"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="384dp"
+            android:fontFamily="@font/jameel_noori_nastaleeq"
+            android:text="Translation"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/arabic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
