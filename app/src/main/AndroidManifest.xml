@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.HolyQuranV2">
+    package="com.example.quran360v2">
 
     <application
         android:allowBackup="true"
@@ -11,28 +11,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HolyQuranV2"
+        android:theme="@style/Theme.Quran360"
         tools:targetApi="31">
         <activity
-            android:name=".TranslationDialog"
+            android:name="com.example.quran360v2.Home"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name="com.example.quran360v2.AyahList"
             android:exported="false" />
         <activity
-            android:name=".AyahList"
+            android:name="com.example.quran360v2.SurahList"
             android:exported="false" />
         <activity
-            android:name=".SurahList"
+            android:name="com.example.quran360v2.CustomAyahView"
             android:exported="false" />
         <activity
-            android:name=".CustomAyahView"
+            android:name="com.example.quran360v2.CustomSurahView"
             android:exported="false" />
         <activity
-            android:name=".CustomSurahView"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="com.example.quran360v2.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,9 +1,7 @@
-package com.example.HolyQuranV2;
+package com.example.quran360v2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.HolyQuranV2.adapter.RecyclerViewAdapter;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,18 +17,11 @@ import java.util.ArrayList;
 
 public class SurahList extends AppCompatActivity {
     EditText searchField;
-    private RecyclerView recyclerView;
-    private RecyclerViewAdapter recyclerViewAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surah_list);
-
-        recyclerView=findViewById(R.id.surahList);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         searchField=findViewById(R.id.searchField);
         DBHelper dbhelper=new DBHelper(this);
@@ -41,14 +32,13 @@ public class SurahList extends AppCompatActivity {
 //        SENList=dbhelper.displaySurahName("SurahNameE");
 
        ArrayList<GenericListItem> SurahList=dbhelper.displaySurahName();
-
+        ListView surahList=findViewById(R.id.surahList);
 
 //        Log.i("Length of SAN:",SANList.get(6));
 //        Log.i("Length of SEN:",SENList.get(6));
-        //CustomArrayAdapterSurah customArrayAdapter=new CustomArrayAdapterSurah(this,SurahList);
+        CustomArrayAdapterSurah customArrayAdapter=new CustomArrayAdapterSurah(this,SurahList);
 
-        recyclerViewAdapter=new RecyclerViewAdapter(this,SurahList);
-        recyclerView.setAdapter(recyclerViewAdapter);
+        surahList.setAdapter(customArrayAdapter);
 
 
 
@@ -64,8 +54,9 @@ public class SurahList extends AppCompatActivity {
                         Log.i("Text change",searchField.getText().toString());
                 ArrayList<GenericListItem> SurahList2;
                 SurahList2=dbhelper.surahFilter(searchField.getText().toString());
-                recyclerViewAdapter=new RecyclerViewAdapter(SurahList.this,SurahList2);
-                recyclerView.setAdapter(recyclerViewAdapter);
+                CustomArrayAdapterSurah customArrayAdapter2;
+                customArrayAdapter2=new CustomArrayAdapterSurah(SurahList.this,SurahList2);
+                surahList.setAdapter(customArrayAdapter2);
 
             }
 
@@ -76,21 +67,21 @@ public class SurahList extends AppCompatActivity {
             }
         });
 
-//        surahList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                Log.i("Clicked on list:",String.valueOf(i));
-//                Intent intent=new Intent(SurahList.this,AyahList.class);
-//                TextView text=(TextView)view.findViewById(R.id.surahA);
-//
-//                String surahName = text.getText().toString();
-//                //String selectedFromList = (String) (surahList.getItemAtPosition(i));
-//                Log.i("Itemmm String::>:",surahName);
-//
-//                intent.putExtra("SurahName", surahName);
-//                startActivity(intent);
-//            }
-//        });
+        surahList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Log.i("Clicked on list:",String.valueOf(i));
+                Intent intent=new Intent(SurahList.this,AyahList.class);
+                TextView text=(TextView)view.findViewById(R.id.surahA);
+
+                String surahName = text.getText().toString();
+                //String selectedFromList = (String) (surahList.getItemAtPosition(i));
+                Log.i("Itemmm String::>:",surahName);
+
+                intent.putExtra("SurahName", surahName);
+                startActivity(intent);
+            }
+        });
     }
 }

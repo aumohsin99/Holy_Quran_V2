@@ -1,4 +1,4 @@
-package com.example.HolyQuranV2;
+package com.example.quran360v2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -71,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
+
+                    case R.id.nav_chrome_reader :
+                        Toast.makeText(getApplicationContext(),"Chrome Reader is clicked",Toast.LENGTH_LONG).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                 }
 
                 return true;

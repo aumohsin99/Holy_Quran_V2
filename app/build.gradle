@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.HolyQuranV2"
+        applicationId "com.example.quran360"
         minSdk 21
         targetSdk 32
         versionCode 1

@@ -1,39 +1,27 @@
-package com.example.HolyQuranV2;
+package com.example.quran360v2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.HolyQuranV2.R;
-import com.example.HolyQuranV2.adapter.RecyclerViewAdapter;
-import com.example.HolyQuranV2.adapter.RecyclerViewAdapterAyah;
+import com.example.quran360v2.R;
 
 import java.util.ArrayList;
 
 public class AyahList extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private RecyclerViewAdapterAyah recyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ayah_list);
 
-        recyclerView=findViewById(R.id.ayahList);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         Intent intent=getIntent();
         String surahName=intent.getStringExtra("SurahName");
-        String trans=intent.getStringExtra("Translation");
-
         DBHelper dbhelper=new DBHelper(this);
 
-        ArrayList<GenericListItem> AyahList=dbhelper.displayAyah(dbhelper.getSurahNumber(surahName),trans);
+        ArrayList<GenericListItem> SurahList=dbhelper.displayAyah(dbhelper.getSurahNumber(surahName));
 //ee
 
 
@@ -43,12 +31,10 @@ public class AyahList extends AppCompatActivity {
 //        ArrayList<String> ATNList;
 //        ATNList=dbhelper.displayAyah(4,index+1);
 
-//        ListView ayahList=findViewById(R.id.ayahList);
-//
-//        CustomArrayAdapterAyah customArrayAdapter=new CustomArrayAdapterAyah(this,SurahList);
-//
-//        ayahList.setAdapter(customArrayAdapter);
-        recyclerViewAdapter=new RecyclerViewAdapterAyah(this,AyahList);
-        recyclerView.setAdapter(recyclerViewAdapter);
+        ListView ayahList=findViewById(R.id.ayahList);
+
+        CustomArrayAdapterAyah customArrayAdapter=new CustomArrayAdapterAyah(this,SurahList);
+
+        ayahList.setAdapter(customArrayAdapter);
     }
 }
